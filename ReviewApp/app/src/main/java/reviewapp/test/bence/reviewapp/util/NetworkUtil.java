@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class Util {
+public class NetworkUtil {
 
     public static boolean isNetworkAvailable(Context context) {
         boolean networkAvailable = false;

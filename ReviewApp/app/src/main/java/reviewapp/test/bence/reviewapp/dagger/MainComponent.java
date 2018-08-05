@@ -5,8 +5,8 @@ import android.content.Context;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import reviewapp.test.bence.reviewapp.CreateReviewActivity;
-import reviewapp.test.bence.reviewapp.ReviewActivity;
+import reviewapp.test.bence.reviewapp.activity.CreateReviewActivity;
+import reviewapp.test.bence.reviewapp.activity.ReviewActivity;
 import reviewapp.test.bence.reviewapp.review.service.ReviewService;
 
 @Component(modules = MainModule.class)

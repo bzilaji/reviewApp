@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import reviewapp.test.bence.reviewapp.travelers.TravelerType;
 
-public class MyReview {
+public class NewReview {
 
     @SerializedName("title")
     private String title;

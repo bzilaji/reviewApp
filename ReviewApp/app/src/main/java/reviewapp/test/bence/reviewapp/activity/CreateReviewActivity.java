@@ -1,15 +1,10 @@
-package reviewapp.test.bence.reviewapp;
+package reviewapp.test.bence.reviewapp.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
@@ -18,12 +13,11 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import reviewapp.test.bence.reviewapp.R;
 import reviewapp.test.bence.reviewapp.dagger.InjectHelper;
 import reviewapp.test.bence.reviewapp.dagger.MainModule;
 import reviewapp.test.bence.reviewapp.databinding.ContentCreateReviewBinding;
-import reviewapp.test.bence.reviewapp.review.model.MyReview;
-import reviewapp.test.bence.reviewapp.review.model.Review;
-import reviewapp.test.bence.reviewapp.review.model.ReviewResponse;
+import reviewapp.test.bence.reviewapp.review.model.NewReview;
 import reviewapp.test.bence.reviewapp.review.service.ReviewService;
 import reviewapp.test.bence.reviewapp.travelers.TravelerType;
 
@@ -70,13 +64,17 @@ public class CreateReviewActivity extends AppCompatActivity {
     }
 
     private void submit() {
-        MyReview review = new MyReview();
+        NewReview review = new NewReview();
         review.setMessage(viewDataBinding.reviewInput.getText().toString());
         review.setTitle(viewDataBinding.reviewInput.getText().toString());
         review.setTravelerType((TravelerType) viewDataBinding.travelType.getSelectedItem());
         reviewService.sendReviews(cityId, tourId, review).subscribe(reviewResponse -> {
             if (reviewResponse.getStatus() == 200) {
                 finish();
+            }
+            else
+            {
+                //TODO show error to user
             }
         });
     }

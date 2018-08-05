@@ -44,6 +44,7 @@ public class ReviewDownloadHelper extends RecyclerView.OnScrollListener {
     }
 
     private void loadItems() {
+        downloading = true;
         disposable = reviewService.getReviews(city, tourId, PAGE_SIZE, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
