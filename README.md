@@ -9,7 +9,7 @@ Technologies in use:
 
 Offline mode support:
 
-To support offline mode I enabled network caching. Unfortunatly the server doesn't support it so its pretty hacky and dangorous.
+To support offline mode, I enabled network caching. Unfortunately, the server doesn't support it, so it’s pretty hacky and dangerous.
 Either server should give support, or would need to find other solutions like storing in db. (Room)
 
 Downloading Pagination:
@@ -18,14 +18,14 @@ Made my own simple class to perform download of data with retrofit and use pagin
 
 Filtering:
 
-Since filtering with Pagination could be confusing to user, (Need to diasble pagination, and wont see al the data) filtering is not implemented.
+Since filtering with Pagination could be confusing to user, (Need to disable pagination, and wont see al the data) filtering is not implemented.
 
 Posting New Review:
 
-Given that user is authenticated, the body can only contain the provided fields. (Title, comment,travel type)
+Given that user is authenticated, the body can only contain the provided fields. (Title, comment, travel type)
 Response can be simple, a status code review_id should be returned and optional error message.
-Would concider adding the number of reviews, to see if new reviews poped up.
-Also might be a good idea to return the new review object. In case we would consider using database.
+Would consider adding the number of reviews, to see if new reviews popped up.
+Also, might be a good idea to return the new review object. In case we would consider using database.
 
 Improvements:
 
@@ -33,6 +33,7 @@ Improvements:
 - Adding a retry button in case of failure
 - Fix orientation change
 - Better use of loading indicator
+
 
 
 
